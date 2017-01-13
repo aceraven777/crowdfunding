@@ -16,11 +16,13 @@ elixir(function(mix) {
     	'app.scss'
     ])
     .styles([
+		'public/css/jquery/jquery-ui.min.css',
 		'public/css/app.css'
 	], 'public/css/all.css', 'public/css');
     
     mix.scripts([
-		'app.js'
+		'jquery/jquery-ui.min.js',
+		'app.js',
 	], 'public/js/all.js', 'public/js');
 
 	mix.sass([

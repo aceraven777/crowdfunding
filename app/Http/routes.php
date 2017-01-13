@@ -19,7 +19,9 @@ Route::auth();
 
 Route::get('home', 'HomeController@index');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth.register'], function () {
+    Route::get('start-a-campaign', 'CampaignController@create');
+    Route::post('campaigns', 'CampaignController@store');
 });
 
 Route::group(['prefix' => 'backend'], function () {
