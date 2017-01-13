@@ -20,7 +20,6 @@ Route::auth();
 Route::get('home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('user-only', 'UserOnlyController@index');
 });
 
 Route::group(['prefix' => 'backend'], function () {
