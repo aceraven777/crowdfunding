@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Start a Campaign</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('campaigns') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('campaigns') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
