@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Storage;
 use App\Campaign;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,15 @@ class CampaignController extends Controller
         DB::beginTransaction();
 
         $campaign = Campaign::create($data);
+
+        $file = $request->file('image_name');
+        $filename = 'main-' . str_random(3) . '.' . $file->getClientOriginalExtension();
+        $fasadf = Storage::put(
+            "images/campaigns/{$campaign->campaign_slug}/{$filename}",
+            file_get_contents($file->getRealPath())
+        );
+
+        DB::rollBack();print_r($fasadf);exit;
 
         print_r($campaign->toArray());
 
