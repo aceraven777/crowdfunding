@@ -23,3 +23,7 @@ Example:
 1. Assuming that you are logged out.
 2. When you visit ```/backend```, the ```url.intended``` is set to ```/backend```, then you will redirect back to ```/backend/login```
 3. Then you visit ```/login``` (the guard of this will be 'web'), so the code in the constructor of ```AuthBaseController``` will remove the ```url.intended``` in the session because the current url intended is for the guard 'admin'.
+
+## Donate
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q4XLBV46V3958)
